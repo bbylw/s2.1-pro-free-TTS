@@ -3,15 +3,16 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "packageManager": "pnpm@12.18.0",
   "scripts": {
     "client:dev": "vite",
-    "dev": "wrangler pages dev --proxy 5173 -- npm run client:dev",
+    "dev": "wrangler pages dev --proxy 5173 -- pnpm run client:dev",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "check": "tsc --noEmit",
     "check:functions": "tsc --noEmit -p functions/tsconfig.json",
-    "deploy": "npm run build && wrangler pages deploy dist --project-name=sonic-forge"
+    "deploy": "pnpm run build && wrangler pages deploy dist --project-name=sonic-forge"
   },
   "dependencies": {
     "clsx": "^2.1.1",
